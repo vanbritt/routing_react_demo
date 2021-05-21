@@ -1,17 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {Route , BrowserRouter as Router, NavLink, Switch} from 'react-router-dom';
+import Customer from './Components/Customer';
+import Product from './Components/Product';
+import NotFound from './Components/NotFound';
 
+const routing =(
+  <Router>
+      <div>
+        <ul>
+          <button>
+            <li>
+              <NavLink to="/" activeClassName="active"> Home </NavLink>
+            </li>
+          </button>
+          <button>
+            <li>
+              <NavLink activeClassName="active" to="/Customer"> Customer </NavLink>
+            </li>
+          </button>
+          <button>
+            <li>
+              <NavLink to="/Product" activeClassName="active"> Product  </NavLink>
+            </li>
+          </button>
+        </ul>
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route  path="/Customer/:id" component={Customer} />
+          <Route  path="/Product" component={Product} />
+          <Route  component={NotFound} />
+        </Switch>
+          
+      </div>
+  </Router>
+)
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

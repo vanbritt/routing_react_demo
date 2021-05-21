@@ -1,0 +1,21 @@
+{
+    "product":[
+        {
+            "id":1,
+            "name":"Grand Piano",
+            "price": 44500,
+            "type": "manual",
+            "description": "This is the grand Piano very important for everyone",
+            "img": ""
+        },
+        {
+            "id":2,
+            "name":"Electric Guitar",
+            "price": 11337,
+            "type": "Electric",
+            "description": "This is a great Electric piano very important for everyone",
+            "img": ""
+        }
+
+    ]
+}
